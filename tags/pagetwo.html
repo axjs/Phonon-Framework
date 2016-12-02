@@ -39,6 +39,7 @@
             var target = evt.target
             action = 'ok'
             
+            console.info(target === self.refs.order, this)
             if(target.getAttribute('data-order') === 'order') {
               phonon.indicator('wait...', true);
               phonon.alert('Thank you for your order!', 'Dear customer')
