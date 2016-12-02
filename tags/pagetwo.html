@@ -45,8 +45,7 @@
             
             console.info(target === self.refs.order, this)
             if(target.getAttribute('data-order') === 'order') {
-              var myDialog = phonon.dialog('#dialog-question');
-              myDialog.open()
+              phonon.question('Question ?', 'Danger')
               //phonon.alert('Thank you for your order!', 'Dear customer')
             } else {
               phonon.indicator('wait...', true);
