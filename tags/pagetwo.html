@@ -42,7 +42,9 @@
             console.info(target === self.refs.order, this)
             if(target.getAttribute('data-order') === 'order') {
               phonon.indicator('wait...', true);
-              phonon.alert('Thank you for your order!', 'Dear customer')
+              var myDialog = phonon.dialog('#my-dialog');
+              myDialog.open()
+              //phonon.alert('Thank you for your order!', 'Dear customer')
 
             } else {
                 phonon.alert('Your order has been canceled.', 'Dear customer')
