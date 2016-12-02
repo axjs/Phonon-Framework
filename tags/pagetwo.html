@@ -49,8 +49,10 @@
         }
 
         this.on('create', function() {
-            document.querySelector('.order').on('tap', onAction)
-            document.querySelector('.cancel').on('tap', onAction)
+            this.refs.order.on('tap', onAction)
+            this.refs.cancel.on('tap', onAction)
+            // document.querySelector('.order').on('tap', onAction)
+            // document.querySelector('.cancel').on('tap', onAction)
             console.info(this)
         })
 
