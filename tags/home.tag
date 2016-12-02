@@ -9,11 +9,6 @@
         <ul class="list">
             <li><a class="padded-list" href="#!pizza/1">Margherita</a></li>
             <li class="divider">Select a pizza</li>
-            <li><a class="padded-list" href="#!pagetwo/margherita">Margherita</a></li>
-            <li><a class="padded-list" href="#!pagetwo/calzone">Cheese Calzone</a></li>
-            <li><a class="padded-list" href="#!pagetwo/pesto">Pesto Pizza</a></li>
-            <li><a class="padded-list" href="#!pagetwo/roma">Roma</a></li>
-            <li><a class="padded-list" href="#!pagetwo/prosciutto">Prosciutto</a></li>
             <li><a class="padded-list" href="#!pagetwo/funghi">Funghi</a></li>
         </ul>
 
