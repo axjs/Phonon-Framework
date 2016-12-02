@@ -12,11 +12,12 @@
     </ul>
   </div>
   <script>
-  document.body.prepend(document.createElement('question'))
-  var question = riot.mount('question')[0]
-  console.log('question', question)   
+  
+  // document.body.prepend(document.createElement('question'))
   
   phonon.question = function (text, title) {
+    var question = riot.mount('question')[0]
+    console.log('question', question)   
     var myDialog = phonon.dialog('#dialog-question');
     console.log(question, myDialog)
     myDialog.open()
