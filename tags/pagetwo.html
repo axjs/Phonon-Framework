@@ -16,7 +16,7 @@
             <button ref="cancel" class="btn negative cancel" data-order="cancel">Cancel</button>
             <button ref="order" class="btn btn-flat primary order" data-order="order">Order</button>
         </div>
-         <button ref="tap" class="btn btn-flat primary order" ontap={ ontap }>Tap</button>
+         <button ref="tap" class="btn btn-flat primary order" onclick={ ontap }>Tap</button>
     </div>
 
     <script>
@@ -35,8 +35,8 @@
         */
 
         var action = null
-        this.ontap = function() {
-          console.log('tap')
+        this.ontap = function(e) {
+          console.log('tap', e)
         }
 
         var onAction = function(evt) {
