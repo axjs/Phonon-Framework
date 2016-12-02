@@ -27,11 +27,14 @@ app.on({page: 'pizza', preventClose: true, content: null});
 // Let's go!
 app.start();
 
-riot.mount('question')
+var question = riot.mount('question')
 
-phonon.question = function (title) {
+phonon.question = function (text, title) {
     var myDialog = phonon.dialog('#dialog-question');
-    console.log(riot, myDialog)
+    console.log(question, myDialog)
     myDialog.open()
+    question.opts.text = text
+    question.opts.title = title
+    question.update()
     return myDialog
 }
