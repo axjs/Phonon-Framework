@@ -16,6 +16,7 @@
             <button ref="cancel" class="btn negative cancel" data-order="cancel">Cancel</button>
             <button ref="order" class="btn btn-flat primary order" data-order="order">Order</button>
         </div>
+         <button ref="tap" class="btn btn-flat primary order" ontap={ ontap }>Tap</button>
     </div>
 
     <script>
@@ -34,6 +35,9 @@
         */
 
         var action = null
+        this.ontap = function() {
+          console.log('tap')
+        }
 
         var onAction = function(evt) {
             var target = evt.target
@@ -41,13 +45,12 @@
             
             console.info(target === self.refs.order, this)
             if(target.getAttribute('data-order') === 'order') {
-              phonon.indicator('wait...', true);
               var myDialog = phonon.dialog('#question-dialog');
               myDialog.open()
               //phonon.alert('Thank you for your order!', 'Dear customer')
-
             } else {
-                phonon.alert('Your order has been canceled.', 'Dear customer')
+              phonon.indicator('wait...', true);
+              phonon.alert('Your order has been canceled.', 'Dear customer')
             }
         }
 
