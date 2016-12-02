@@ -11,7 +11,7 @@
 
             <h2>Order</h2>
 
-            <p>1x Pizza: {pizza}</p>
+            <p>1x Pizza: { pizza }</p>
 
             <button ref="cancel" class="btn negative cancel" data-order="cancel">Cancel</button>
             <button ref="order" class="btn btn-flat primary order" data-order="order">Order</button>
@@ -42,7 +42,7 @@
             console.info(target === self.refs.order, this)
             if(target.getAttribute('data-order') === 'order') {
               phonon.indicator('wait...', true);
-              var myDialog = phonon.dialog('#my-dialog');
+              var myDialog = phonon.dialog('#question-dialog');
               myDialog.open()
               //phonon.alert('Thank you for your order!', 'Dear customer')
 
