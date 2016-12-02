@@ -2,8 +2,8 @@
   <div class="dialog" data-cancelable="false" id="question-dialog">
     <div class="content">
         <div class="padded-full">
-            <h3>Hey! <i class="icon icon-info-outline"></i></h3>
-            <p>Do you like chocolate?</p>
+            <h3>{opts.title || 'Hey! '}<i class="icon icon-info-outline"></i></h3>
+            <p>{opts.text || 'Do you like chocolate?'}</p>
         </div>
     </div>
     <ul class="buttons">
@@ -11,4 +11,7 @@
         <li><a class="btn btn-flat negative btn-cancel" data-dialog-close="true">NO</a></li>
     </ul>
   </div>
+  <script>
+    
+  <script>
 </question>
