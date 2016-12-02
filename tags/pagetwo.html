@@ -40,7 +40,8 @@
             action = 'ok'
             
             if(target.getAttribute('data-order') === 'order') {
-                phonon.alert('Thank you for your order!', 'Dear customer')
+              phonon.indicator('wait...', true);
+              phonon.alert('Thank you for your order!', 'Dear customer')
 
             } else {
                 phonon.alert('Your order has been canceled.', 'Dear customer')
@@ -50,6 +51,7 @@
         this.on('create', function() {
             document.querySelector('.order').on('tap', onAction)
             document.querySelector('.cancel').on('tap', onAction)
+            console.info(this)
         })
 
         this.on('close', function(self) {
