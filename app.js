@@ -26,3 +26,5 @@ app.on({page: 'pizza', preventClose: true, content: null});
 
 // Let's go!
 app.start();
+
+riot.mount('question')
