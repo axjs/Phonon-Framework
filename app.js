@@ -15,8 +15,6 @@ var app = phonon.navigator();
  * The activity scope can be defined inside the page tag, but it is not necessary in our example.
 */
 app.on({page: 'home', preventClose: false, content: null});
-app.on({page: 'pizza', preventClose: false, content: null});
-
 
 /**
  * On the second page, we define the activity scope inside pagetwo.tag
@@ -24,6 +22,7 @@ app.on({page: 'pizza', preventClose: false, content: null});
  * preventClose is true, so we have to define the close event (see pagetwo.tag)
 */
 app.on({page: 'pagetwo', preventClose: true, content: null, readyDelay: 1});
+app.on({page: 'pizza', preventClose: true, content: null});
 
 // Let's go!
 app.start();
