@@ -29,7 +29,7 @@ app.start();
 
 
 phonon.question = function (text, title) {
-    var question = riot.mount('question')
+    var question = riot.mount('question')[0]
     console.log('question', question)
 
     var myDialog = phonon.dialog('#dialog-question');
