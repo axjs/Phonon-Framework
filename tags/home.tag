@@ -7,7 +7,7 @@
     <div class="content">
 
         <ul class="list">
-            <li><a class="padded-list" href="#!pizza/">Margherita</a></li>
+            <li><a class="padded-list" href="#!pizza/1">Margherita</a></li>
             <li class="divider">Select a pizza</li>
             <li><a class="padded-list" href="#!pagetwo/margherita">Margherita</a></li>
             <li><a class="padded-list" href="#!pagetwo/calzone">Cheese Calzone</a></li>
