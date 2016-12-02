@@ -1,5 +1,8 @@
 <pizza>
     <header class="header-bar">
+       <div class="left">
+            <button class="btn pull-left icon icon-arrow-back" data-navigation="$previous-page"></button>
+        </div>
         <div class="center">
             <h1 class="title">Pizza</h1>
         </div>
