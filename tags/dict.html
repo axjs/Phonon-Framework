@@ -14,10 +14,17 @@
         </ul>
 
     </div>
+    <button class="floating-action icon icon-menu active btn-primary" onclick={ add }></button>
     <script>
         var tag = this
         tag.name = ''
         tag.items = []
+        
+        tag.add = function () {
+            var arr = data(tag.name) || []
+            arr.push(Date.now())
+            data(tag.name, arr)
+        }
         
         tag.on('hashchanged', function(name) {
           console.log('dict', name)
