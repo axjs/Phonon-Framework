@@ -39,3 +39,16 @@ app.start();
     question.update()
     return myDialog
 }
+  
+  var data = function (name, value) {
+      if (arguments.length === 1) {
+        return data._$[name]          
+      }
+      data._$[name] = value
+      data.trigger('name.set', value)
+      return data
+  }
+  riot.observable(data)
+  data._$ = {}
+
+  data('pizza', [1,2,3,4,5,6,7])
