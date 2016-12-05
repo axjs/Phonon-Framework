@@ -18,8 +18,8 @@
     <script>
         var self = this
         this.pages = opts.pages || [1,2,3]
-        data.on('pages.set', function (pages) {
-            console.info('pages.set', pages)
+        data.on('pages', function (pages) {
+            console.info('pages', pages)
             self.pages = pages || [3,2,1]
         })
     </script>
