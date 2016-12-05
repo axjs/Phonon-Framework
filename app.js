@@ -23,6 +23,7 @@ app.on({page: 'home', preventClose: false, content: null});
 */
 app.on({page: 'pagetwo', preventClose: true, content: null, readyDelay: 1});
 app.on({page: 'pizza', preventClose: true, content: null});
+app.on({page: 'dict', preventClose: true, content: null});
 
 // Let's go!
 app.start();
