@@ -51,7 +51,9 @@ app.start();
         return data
       }
       riot.observable(f)
-      data.__ = {}
+      f.__ = {}
+      
+      return f
   }
 
   var data = store()
