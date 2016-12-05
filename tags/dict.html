@@ -21,9 +21,13 @@
         tag.items = []
         
         tag.add = function () {
-            var arr = data(tag.name) || []
-            arr.push(Date.now())
-            data(tag.name, arr)
+            var prompt = phonon.prompt('Enter '+tag.name+' item');
+            prompt.on('confirm', function(inputValue) {
+              var arr = data(tag.name) || []
+              arr.push(Date.now())
+              data(tag.name, arr)
+            } );
+            prompt.on('cancel', function() {} );
         }
         
         tag.on('hashchanged', function(name) {
