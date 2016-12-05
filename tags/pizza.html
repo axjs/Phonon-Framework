@@ -20,7 +20,9 @@
         tag.pages = opts.pages || []
         
         tag.on('create', function() {
+            console.info('create pizza')
             tag.pages = data('pages') || []
+            tag.update()
         })
         
         data.on('pages', function (pages) {
