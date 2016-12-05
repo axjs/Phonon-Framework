@@ -22,9 +22,11 @@
         
         tag.add = function () {
             var prompt = phonon.prompt('Enter '+tag.name+' item');
-            prompt.on('confirm', function(inputValue) {
+            prompt.on('confirm', function(value) {
+              if (!value)  
+                return
               var arr = data(tag.name) || []
-              arr.push(Date.now())
+              arr.push(value)
               data(tag.name, arr)
             } );
             prompt.on('cancel', function() {} );
