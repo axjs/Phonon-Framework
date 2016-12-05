@@ -45,7 +45,7 @@ app.start();
         return data._$[name]          
       }
       data._$[name] = value
-      data.trigger('name.set', value)
+      data.trigger(name, value)
       return data
   }
   riot.observable(data)
