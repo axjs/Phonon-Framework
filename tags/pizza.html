@@ -16,12 +16,17 @@
 
     </div>
     <script>
-        var self = this
-        this.pages = opts.pages || [1,2,3]
+        var tag = this
+        tag.pages = opts.pages || []
+        
+        tag.on('create', function() {
+            tag.pages = data('pages') || []
+        })
+        
         data.on('pages', function (pages) {
             console.info('pages', pages)
-            self.pages = pages || [3,2,1]
-            self.update()
+            tag.pages = pages || []
+            tag.update()
         })
     </script>
 </pizza>
