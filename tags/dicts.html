@@ -1,0 +1,36 @@
+<dicts>
+    <header class="header-bar">
+       <div class="left">
+            <button class="btn pull-left icon icon-arrow-back" data-navigation="$previous-page"></button>
+        </div>
+        <div class="center">
+            <h1 class="title">Dicts</h1>
+        </div>
+    </header>
+    <div class="content">
+
+        <ul class="list">
+            <li each="{ name, i in items }"><a class="padded-list" href="#!pagetwo/{name}">{name}</a></li>
+        </ul>
+
+    </div>
+    <script>
+        var tag = this
+        tag.name = ''
+        tag.items = []
+        
+        tag.on('hashchanged', function(name) {
+          data.off(tag.name)
+          tag.name = name
+ 
+          data.on(name, function (items) {
+            console.info('items', items)
+            tag.items = items || []
+            tag.update()
+          })
+
+          tag.items = data(name) || []
+          tag.update()
+        })
+    </script>
+</dicts>
