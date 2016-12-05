@@ -51,4 +51,4 @@ app.start();
   riot.observable(data)
   data._$ = {}
 
-  data('pizza', [1,2,3,4,5,6,7])
+  data('pages', [1,2,3,4,5,6,7])
