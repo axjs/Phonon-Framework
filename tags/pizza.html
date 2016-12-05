@@ -11,12 +11,16 @@
 
         <ul class="list">
             <li class="divider">Select a pizza</li>
-            <li { name, i in pages }><a class="padded-list" href="#!pagetwo/{name}">{name}</a></li>
+            <li each="{ name, i in pages }"><a class="padded-list" href="#!pagetwo/{name}">{name}</a></li>
         </ul>
 
     </div>
     <script>
+        var self = this
         this.pages = opts.pages || [1,2,3]
-        
+        data.on('pages.set', function (pages) {
+            console.info('pages.set', pages)
+            self.pages = pages || [3,2,1]
+        })
     </script>
 </pizza>
