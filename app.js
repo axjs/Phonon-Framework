@@ -38,17 +38,22 @@ app.start();
     question.opts.title = title
     question.update()
     return myDialog
-}
-  
-  var data = function (name, value) {
-      if (arguments.length === 1) {
-        return data._$[name]          
-      }
-      data._$[name] = value
-      data.trigger(name, value)
-      return data
   }
-  riot.observable(data)
-  data._$ = {}
+  
+  function store(opts) {
+      var f = function (name, value) {
+        if (arguments.length === 1) {
+            return f.__[name]          
+        }
+        
+        f.__[name] = value
+        f.trigger(name, value)
+        return data
+      }
+      riot.observable(f)
+      data.__ = {}
+  }
+
+  var data = store()
 
   data('pages', [1,2,3,4,5,6,7])
