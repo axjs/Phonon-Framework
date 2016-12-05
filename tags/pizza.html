@@ -11,14 +11,12 @@
 
         <ul class="list">
             <li class="divider">Select a pizza</li>
-            <li><a class="padded-list" href="#!pagetwo/margherita">Margherita</a></li>
-            <li><a class="padded-list" href="#!pagetwo/calzone">Cheese Calzone</a></li>
-            <li><a class="padded-list" href="#!pagetwo/pesto">Pesto Pizza</a></li>
-            <li><a class="padded-list" href="#!pagetwo/roma">Roma</a></li>
-            <li><a class="padded-list" href="#!pagetwo/prosciutto">Prosciutto</a></li>
-            <li><a class="padded-list" href="#!pagetwo/funghi">Funghi</a></li>
+            <li { name, i in pages }><a class="padded-list" href="#!pagetwo/{name}">Margherita</a></li>
         </ul>
 
     </div>
-    
+    <script>
+        this.pages = opts.pages || [1,2,3]
+        
+    </script>
 </pizza>
