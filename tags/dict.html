@@ -26,7 +26,7 @@
         tag.remove = function (e) {
             console.info('remove', e)
             var arr = store(tag.name) || []
-            arr.splice(e.item.i)
+            arr.splice(e.item.i, 1)
             store(tag.name, arr)
         }
         
