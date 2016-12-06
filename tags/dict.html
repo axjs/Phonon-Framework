@@ -25,9 +25,9 @@
             prompt.on('confirm', function(value) {
               if (!value)  
                 return
-              var arr = data(tag.name) || []
+              var arr = store(tag.name) || []
               arr.push(value)
-              data(tag.name, arr)
+              store(tag.name, arr)
             } );
             prompt.on('cancel', function() {} );
         }
@@ -35,10 +35,10 @@
         tag.on('hashchanged', function(name) {
           console.log('dict', name)
           
-          data.off(tag.name)
+          store.off(tag.name)
           tag.name = name
  
-          data.on(name, function (items) {
+          store.on(name, function (items) {
             console.info('items', items)
             tag.items = items || []
             tag.update()
