@@ -21,11 +21,11 @@
         
         tag.on('create', function() {
             console.info('create pizza')
-            tag.pages = data('pages') || []
+            tag.pages = store('pages') || []
             tag.update()
         })
         
-        data.on('pages', function (pages) {
+        store.on('pages', function (pages) {
             console.info('pages', pages)
             tag.pages = pages || []
             tag.update()
