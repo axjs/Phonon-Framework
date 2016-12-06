@@ -41,22 +41,24 @@ app.start();
     return myDialog
   }
   
-  function store(opts) {
+  function createStore(store) {
       var f = function (name, value) {
-        if (arguments.length === 1) {
-            return f.__[name]          
+        store(name, value)  
+        if (arguments.length > 1) {
+          f.trigger(name, value)
         }
-        
-        f.__[name] = value
-        f.trigger(name, value)
-        return data
       }
       riot.observable(f)
-      f.__ = {}
-      
       return f
   }
-
-  var data = store()
+  
+  var _data = {}
+  var data = createStore(function(name, value) {
+        if (arguments.length === 1) {
+            return _data[name]          
+        }
+        
+        _data[name] = value
+  })
 
   data('pages', [1,2,3,4,5,6,7])
