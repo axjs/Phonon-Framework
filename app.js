@@ -53,7 +53,7 @@ app.start();
       return riot.observable(f)
   }
   
-  var data = createStore(function(name, value) {
+  var store = createStore(function(name, value) {
         console.info('store', name, value)
         if (arguments.length === 1) {
             return JSON.parse(localStorage.getItem(name) || 'null');
@@ -61,4 +61,4 @@ app.start();
         localStorage.setItem(name, JSON.stringify(value));
   })
 
-  data('pages', [1,2,3,4,5,6,7])
+  store('pages', [1,2,3,4,5,6,7])
