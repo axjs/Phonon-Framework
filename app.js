@@ -58,7 +58,7 @@ app.start();
         if (arguments.length === 1) {
             return JSON.parse(localStorage.getItem(name) || 'null');
         }
-        
+        console.info('set', name, value)
         localStorage.setItem(name, JSON.stringify(value));
   })
 
