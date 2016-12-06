@@ -25,6 +25,9 @@
         
         tag.remove = function (e) {
             console.info('remove', e)
+            var arr = store(tag.name) || []
+            arr.splice(e.item.i)
+            store(tag.name, arr)
         }
         
         tag.add = function () {
