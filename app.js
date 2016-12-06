@@ -43,15 +43,14 @@ app.start();
   
   function createStore(store) {
       var f = function (name, value) {
-        var res = store(name, value)  
         if (arguments.length === 1) {
-          return res
+          return store(name) 
         } else {
+          store(name, value)  
           f.trigger(name, value)
         }
       }
-      riot.observable(f)
-      return f
+      return riot.observable(f)
   }
   
   var data = createStore(function(name, value) {
