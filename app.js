@@ -58,8 +58,8 @@ app.start();
         if (arguments.length === 1) {
             return JSON.parse(localStorage.getItem(name) || 'null');
         }
-        console.info('set', name, value)
         localStorage.setItem(name, JSON.stringify(value));
+        console.info('set', name, value, JSON.stringify(value))
   })
 
   data('pages', [1,2,3,4,5,6,7])
