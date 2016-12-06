@@ -43,8 +43,10 @@ app.start();
   
   function createStore(store) {
       var f = function (name, value) {
-        store(name, value)  
-        if (arguments.length > 1) {
+        var res = store(name, value)  
+        if (arguments.length === 1) {
+          return res
+        } else {
           f.trigger(name, value)
         }
       }
@@ -52,13 +54,12 @@ app.start();
       return f
   }
   
-  var _data = {}
   var data = createStore(function(name, value) {
         if (arguments.length === 1) {
-            return _data[name]          
+            return JSON.parse(localStorage.getItem(name) || 'null');
         }
         
-        _data[name] = value
+        localStorage.setItem(name, JSON.stringify(value));
   })
 
   data('pages', [1,2,3,4,5,6,7])
