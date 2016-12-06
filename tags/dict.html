@@ -10,7 +10,10 @@
     <div class="content">
 
         <ul class="list">
-            <li each="{ name, i in items }"><a class="padded-list" href="#!pagetwo/{name}">{name}</a></li>
+            <li each="{ name, i in items }">
+              <a href="#" onclick={ parent.remove } class="pull-right icon icon-close"></a>
+              <a class="padded-list" href="#!pagetwo/{name}">{name}</a>
+            </li>
         </ul>
 
     </div>
@@ -19,6 +22,10 @@
         var tag = this
         tag.name = ''
         tag.items = []
+        
+        tag.remove = function (e) {
+            console.info('remove', e)
+        }
         
         tag.add = function () {
             var prompt = phonon.prompt('Enter '+tag.name+' item');
